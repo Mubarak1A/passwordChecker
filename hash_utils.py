@@ -21,8 +21,8 @@ def get_password_leaks_count(hashes, hash_to_check):
     int: The count of compromised passwords for the given hash.
     '''
     hashes = (line.split(':') for line in hashes.text.splitlines())
-    for hash, count in hashes:
-        if hash == hash_to_check:
+    for a_hash, count in hashes:
+        if a_hash == hash_to_check:
             return count
     return 0
 
